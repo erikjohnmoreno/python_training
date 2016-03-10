@@ -48,21 +48,17 @@ def not_bad(s):
 #  a-front + b-front + a-back + b-back
 def front_back(a, b):
     string = ""
+    if len(b) % 2 == 0:
+        b_gitna = len(b)/2
+    else:
+        b_gitna = (len(b)/2) + 1
+
     if len(a) % 2 == 0:
         a_gitna = len(a)/2
-        if len(b) % 2 == 0:
-            b_gitna = len(b)/2
-        else:
-            b_gitna = (len(b)/2) + 1
+
         string = a[:a_gitna] + b[:b_gitna] + a[a_gitna:] + b[b_gitna:]
     else:
         a_gitna = (len(a)/2) + 1
-        if len(b) % 2 == 0:
-            b_gitna = len(b)/2
-        else:
-            b_gitna = (len(b)/2) + 1
-
-        # odd
         string = a[:a_gitna] + b[:b_gitna] + a[a_gitna:] + b[b_gitna:]
     # +++your code here+++
     return string
